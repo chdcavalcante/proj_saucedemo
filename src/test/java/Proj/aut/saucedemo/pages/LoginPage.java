@@ -1,9 +1,7 @@
 package Proj.aut.saucedemo.pages;
 
-import Proj.aut.saucedemo.drivers.DriversConexao;
 import Proj.aut.saucedemo.elementos.WebElements;
 import Proj.aut.saucedemo.metodos.MetodosLogin;
-import jdk.internal.org.objectweb.asm.tree.TryCatchBlockNode;
 
 public class LoginPage extends WebElements {
 

@@ -1,6 +1,5 @@
 package Proj.aut.saucedemo.steps;
 
-import Proj.aut.saucedemo.drivers.DriversConexao;
 import Proj.aut.saucedemo.pages.LoginPage;
 import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
@@ -74,7 +73,7 @@ public class LoginTest extends IniciarTeste {
 
     @Then("Logout realizado com sucesso")
     public void logout_realizado_com_sucesso() {
-        page.validarUrlLogin();
+        page.logoutRealizado();
     }
 
 
