@@ -29,9 +29,6 @@ public class LoginPage extends WebElements {
         MetodosLogin.click(btnLogin, "Clicar no botão login");
     }
 
-    public void validarUrlLogin() {
-        MetodosLogin.validarUrl(urlLoginPage, "validar url");
-    }
 
     public void validarUrlHomepage() {
         MetodosLogin.validarUrl(urlHomepage, "validar url");
