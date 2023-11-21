@@ -3,6 +3,7 @@ package Proj.aut.saucedemo.elementos;
 public class WebElements {
 
 	public static String urlHomepage = "https://www.saucedemo.com/v1/inventory.html";
+	public static String urlLoginPage = "https://www.saucedemo.com/v1/index.html";
 
 	public static String campoUsername = "user-name";
 	public static String campoPassword = "password";
