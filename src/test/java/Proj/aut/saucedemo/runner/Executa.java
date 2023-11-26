@@ -8,10 +8,10 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/resources/Login.feature", 
+		features = "src/test/resources",
 		glue = "Proj.aut.saucedemo.steps", 
-		dryRun = true, 
-		tags = "@Login and @Carrinho",
+		dryRun = true,
+		tags = "",
 		monochrome = true, 
 		snippets = SnippetType.CAMELCASE, 
 		plugin = {"pretty", "html:target/cucumber-report.html" })
