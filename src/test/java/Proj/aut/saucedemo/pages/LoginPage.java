@@ -1,42 +1,43 @@
 package Proj.aut.saucedemo.pages;
 
 import Proj.aut.saucedemo.elementos.WebElements;
-import Proj.aut.saucedemo.metodos.MetodosLogin;
+import Proj.aut.saucedemo.metodos.Metodos;
+import org.openqa.selenium.By;
 
 public class LoginPage extends WebElements {
 
     public void usernameValido() {
-        MetodosLogin.escrever(WebElements.campoUsername, getUserNameValido(), "Preencher nome de usuário valido");
+        Metodos.escrever(WebElements.campoUsername, getUserNameValido(), "Preencher nome de usuário valido");
     }
 
     public void usuarioBloqueado() {
-        MetodosLogin.escrever(campoUsername, getUsuarioBloqueado(), "Preencher nome de usuário bloqueado");
+        Metodos.escrever(campoUsername, getUsuarioBloqueado(), "Preencher nome de usuário bloqueado");
     }
 
     public void usernameInvalido() {
-        MetodosLogin.escrever(campoUsername, getUserNameInvalido(), "Preencher nome de usuário ínvalido");
+        Metodos.escrever(campoUsername, getUserNameInvalido(), "Preencher nome de usuário ínvalido");
     }
 
     public void passwordValido() {
-        MetodosLogin.escrever(campoPassword, getPasswordValido(), "Preencher password valido");
+        Metodos.escrever(campoPassword, getPasswordValido(), "Preencher password valido");
     }
 
     public void passwordInvalido() {
-        MetodosLogin.escrever(campoPassword, getPasswordInvalido(), "Preencher password invalido");
+        Metodos.escrever(campoPassword, getPasswordInvalido(), "Preencher password invalido");
     }
 
     public void clicarLogin() {
-        MetodosLogin.click(btnLogin, "Clicar no botão login");
+        Metodos.click(idBtnLogin, "Clicar no botão login");
     }
 
 
     public void validarUrlHomepage() {
-        MetodosLogin.validarUrl(urlHomepage, "validar url");
+        Metodos.validarUrl(urlHomepage, "validar url");
 
     }
 
     public void validarMensagem(String texto) {
-        MetodosLogin.validarMensagem(texto, "Validar mensagem após tentiva de login");
+        Metodos.validarMensagem(By.xpath("//div[@class='error-message-container error']"),texto, "Validar mensagem após tentiva de login");
 
     }
 
@@ -47,17 +48,17 @@ public class LoginPage extends WebElements {
     }
 
     public void btnLogout() throws InterruptedException {
-        MetodosLogin.clickXpath("//*[contains(text(), 'Open Menu')]");
+        Metodos.clickXpath("//*[contains(text(), 'Open Menu')]");
 
         Thread.sleep(2000);
 
-        MetodosLogin.clickXpath("//*[contains(text(), 'Logout')]");
+        Metodos.clickXpath("//*[contains(text(), 'Logout')]");
 
 
     }
 
     public void logoutRealizado() {
-        MetodosLogin.validarUrl("https://www.saucedemo.com/v1/index.html", "validar url");
+        Metodos.validarUrl(WebElements.urlLoginPage, "validar url");
     }
 
 

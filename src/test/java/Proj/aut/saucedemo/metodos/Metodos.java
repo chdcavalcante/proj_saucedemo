@@ -3,10 +3,14 @@ package Proj.aut.saucedemo.metodos;
 import Proj.aut.saucedemo.drivers.DriversConexao;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 import static org.junit.Assert.assertEquals;
 
-public class MetodosLogin extends DriversConexao {
+public class Metodos extends DriversConexao {
 
     public static void click(String id, String passo) {
         try {
@@ -42,9 +46,9 @@ public class MetodosLogin extends DriversConexao {
 
     }
 
-    public static void validarMensagem(String textoEsperado, String passo) {
+    public static void validarMensagem(By by, String textoEsperado, String passo) {
         try {
-            WebElement mensagem = driver.findElement(By.xpath("//*[@id='login_button_container']/div/form/h3"));
+            WebElement mensagem = driver.findElement(by);
             String msg = mensagem.getText();
             assertEquals(msg, textoEsperado);
             System.out.println(msg);
@@ -54,5 +58,15 @@ public class MetodosLogin extends DriversConexao {
 
     }
 
+    public static void elementoVisivel(By by) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        try {
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
+            System.out.println("O elemento não está visível na tela.");
+        } catch (Exception e) {
+            System.out.println("O elemento ainda está visível na tela ou não foi encontrado.");
+        }
+
+    }
 
 }

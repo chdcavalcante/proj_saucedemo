@@ -1,5 +1,6 @@
 package saucedemo.config;
 
+import Proj.aut.saucedemo.elementos.WebElements;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import Proj.aut.saucedemo.drivers.DriversConexao;
@@ -11,7 +12,7 @@ public class IniciarTeste extends DriversConexao {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://www.saucedemo.com/v1/");
+        driver.get(WebElements.urlLoginPage);
 
     }
 
