@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 		features = "src/test/resources/Login.feature", 
 		glue = "Proj.aut.saucedemo.steps", 
 		dryRun = true, 
-		tags = "@Login", 
+		tags = "@Login and @Carrinho",
 		monochrome = true, 
 		snippets = SnippetType.CAMELCASE, 
 		plugin = {"pretty", "html:target/cucumber-report.html" })
